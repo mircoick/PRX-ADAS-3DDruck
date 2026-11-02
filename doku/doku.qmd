@@ -496,6 +496,10 @@ number-sections: true
   - RP2040 GP0 (TX) $\rightarrow$ Pi GPIO 5 (RX2 / Header Pin 29)
   - RP2040 GP1 (RX) $\rightarrow$ Pi GPIO 4 (TX2 / Header Pin 7)
 
+## Steps:
+
+- X-Achse: 125.000
+- Y-Achse: 100.000
 
 # Maße Neues Display
 
