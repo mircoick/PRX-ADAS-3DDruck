@@ -30,14 +30,15 @@ Hierfür wurde nun ein kleines einzelnes Python-Skript (`limit_switch.py`) gesch
 Die Heizelemente sind wohl die am einfachsten anzusteuerden Bauteile in dieser Liste, da sie bei einer anliegenden Spannung Wärme erzeugen. Die hier in einem Material eingebaute Spule, z.B. in das Hotend oder Heatbed des Druckers, erwärmt sich bei Stromdurchfluss. Neben den Heizelementen bedarf es jedoch noch mindestens eines Temperatursensors, welcher die Temperatur überwacht und als Heizstopp fungiert. Diese Temperatursensoren können als NTC (Heißleiter) oder PTC (Kaltleiter) umgesetzt werden. Am beliebtesten sind hier jedoch die wie ein PTC funktionierenden Platin-Sensoren, da diese PT100 bzw. PT1000 Glieder einen sehr linearen Kurvenverlauf aufweisen. Außerdem sind sie so optimiert, dass sie bei einer Temperatur von $T=0\,°C$ exakt einen Widerstand von $R_{PT100}=100\,\Omega$ bzw. $R_{PT1000}=1000\,\Omega$ aufweisen. Sie sind somit ausgezeichnet für die Temperaturmessung geeignet. Die @fig-pt100_pt1000 zeigt einen Kurvenverlauf der beiden Temperatursensoren.
 
 \newpage 
-
 ```{python}
+#| label: fig-pt100_pt1000
+#| fig-cap: "Kennlinie der Pt100 und Pt1000 Sensoren"
 #| echo: false
+#| warning: false
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- 1. Pt100 & Pt1000 Kennlinie ---
 A = 3.9083e-3
 B = -5.775e-7
 C = -4.183e-12
@@ -56,7 +57,9 @@ def pt_resistance(r0, t_arr):
 r_pt100 = pt_resistance(100, temp)
 r_pt1000 = pt_resistance(1000, temp)
 
-plt.figure(figsize=(6, 4))
+fig = plt.figure()
+fig.set_size_inches(5, 3.5)
+
 plt.plot(temp, r_pt1000, label='Pt1000', color='#d62728', lw=2)
 plt.plot(temp, r_pt100, label='Pt100', color='#2ca02c', lw=2)
 
@@ -68,47 +71,55 @@ plt.ylim(0, 4000)
 plt.grid(True, which='both', linestyle='--', alpha=0.5)
 plt.legend(fontsize=11, loc='center right', frameon=True)
 plt.tight_layout()
-plt.savefig('pics/pt100_pt1000.pdf', format='pdf', bbox_inches='tight')
-plt.close()
+plt.show()
+```
 
-# --- 2. PWM Signalverlauf ---
+
+Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bauteil wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschreiten. Standardisierte Lüfter beim 3D-Druck können mit bis zu 24V über ein PWM-Signal betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Als Beispiel kann man einen $5\,\text{V}$ Lüfter in Verbindung mit einer maximalen Signalspannung von $V_{sig}=5\,\text{V}$ nehmen. Dieses kontinuierliche $5\,\text{V}$ Spannungssignal entspricht für den Lüfter eine Leistung am Ausgang von $P_{max}=100\,\%$. Wird nun mithilfe der Pulsweitenmodulation das Signal auf $20\,\%$ reduziert, das heißt es wird kein Dauerimpuls gesendet, sondern ein Impuls mit einer Pulsbreite von $t_{an}=20\,\%$ gesendet, so wird die Spannung auf $V_{sig}=1\,\text{V}$ reduziert und der Lüfter läuft nur noch mit $P=20\,\%$. Somit kann die Leistung des Lüfters über das PWM-Signal geregelt werden. Die @fig-pwm zeigt die entstehende Signalspannung bei beispielhaften PWM-Signalen.
+
+```{python}
+#| label: fig-pwm
+#| fig-cap: "Signalverlauf bei Pulsweitenmodulation"
+#| echo: false
+#| warning: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+
 duty_cycles = [1, 0.50, 0.20]
 v_max = 5.0
 periods = 3
 t_per_period = 1.0
 
-fig, axs = plt.subplots(3, 1, figsize=(5, 4), sharex=True, sharey=True)
+fig, axs = plt.subplots(1, 3, sharex=True, sharey=True)
+fig.set_size_inches(7, 3)
 
 for idx, dc in enumerate(duty_cycles):
     ax = axs[idx]
     t = np.linspace(0, periods * t_per_period, 1000)
     y = np.where((t % t_per_period) < (dc * t_per_period), v_max, 0.0)
-    
-    ax.plot(t, y, color='#1f77b4', lw=2)
-    ax.axhline(dc * v_max, color='#d62728', linestyle='--', lw=1.5, label=f'Mittelwert: {dc * v_max:.1f} V')
-    
+
+    ax.plot(t, y, color='#1f77b4', lw=1.8)
+    ax.axhline(dc * v_max, color='#d62728', linestyle='--', lw=1.3,
+               label=f'Mittelwert: {dc * v_max:.1f} V')
+
     for p in range(periods + 1):
         ax.axvline(p * t_per_period, color='gray', linestyle=':', alpha=0.7)
-        
+
     ax.set_ylim(-0.5, 6.0)
     ax.set_yticks([0, 5])
-    ax.set_yticklabels(['0V', '5V'])
-    ax.set_title(f'Tastverhältnis: {int(dc*100)}%', fontsize=11, loc='left', weight='bold')
-    ax.legend(loc='upper right', frameon=True)
+    ax.set_yticklabels(['0 V', '5 V'])
+    ax.set_title(f'Tastverhältnis: {int(dc*100)}%', fontsize=10,
+                 loc='center', weight='bold')
+    ax.legend(loc='upper right', fontsize=8, frameon=True)
     ax.grid(True, which='both', linestyle='--', alpha=0.3)
 
-axs[2].set_xlabel('Zeit t (Perioden)', fontsize=11)
+axs[0].set_ylabel('Spannung in V', fontsize=10)
+axs[1].set_xlabel('Zeit t (Perioden)', fontsize=10)
+
 plt.tight_layout()
-plt.savefig('pics/pwm.pdf', format='pdf', bbox_inches='tight')
-plt.close()
+plt.show()
 ```
-
-
-![Kennlinie der Pt100 und Pt1000 Sensoren](pics/pt100_pt1000.pdf){#fig-pt100_pt1000 width="60%"}
-
-Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bauteil wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschreiten. Standardisierte Lüfter beim 3D-Druck können mit bis zu 24V über ein PWM-Signal betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Als Beispiel kann man einen $5\,\text{V}$ Lüfter in Verbindung mit einer maximalen Signalspannung von $V_{sig}=5\,\text{V}$ nehmen. Dieses kontinuierliche $5\,\text{V}$ Spannungssignal entspricht für den Lüfter eine Leistung am Ausgang von $P_{max}=100\,\%$. Wird nun mithilfe der Pulsweitenmodulation das Signal auf $50\,\%$ reduziert, das heißt es wird kein Dauerimpuls gesendet, sondern ein Impuls mit einer Pulsbreite von $t_{an}=50\,\%$ gesendet, so wird die Spannung auf $V_{sig}=2,5\,\text{V}$ reduziert und der Lüfter läuft nur noch mit $P=50\,\%$. Somit kann die Leistung des Lüfters über das PWM-Signal geregelt werden. Die @fig-pwm zeigt die entstehende Signalspannung bei beispielhaften PWM-Signalen.
-
-![Signalverlauf bei Pulsweitenmodulation](pics/pwm.pdf){#fig-pwm width="60%"}
 
 
 \newpage 

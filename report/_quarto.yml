@@ -171,5 +171,5 @@ format:
     filters:
       - acronyms
 
-  docx: default
+  #docx: default
   #gfm: default
