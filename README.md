@@ -6,9 +6,12 @@ In diesem Repository ist die technische und wirtschaftliche Machbarkeit eines Sy
 
 ## Dokumentation & Berichte
 
-Die offiziellen Berichte und Ausarbeitungen stehen im PDF-Format zur Verfügung:
-* [Zwischenbericht (PDF)](report/.output/Zwischenbericht_Mirco_Ick_5312533.pdf)
-* [Abschlussbericht (PDF)](report/.output/prx_final_report.pdf)
+Die offiziellen Berichte und Ausarbeitungen stehen hier zur Verfügung:
+- **Zwischenbericht:** 
+  [&#128196; PDF](docs/Zwischen_Mirco_Ick_5312533.pdf)
+
+- **Abschlussbericht:** 
+  [&#128196; PDF](docs/prx_final_report.pdf) &nbsp;|&nbsp; [&#127760; Webseite](https://mircoick.github.io/PRX-ADAS-3DDruck/prx_final_report.html)
 
 ---
 
@@ -25,8 +28,13 @@ Das Repository gliedert sich in folgende Hauptkomponenten:
   </thead>
   <tbody>
     <tr>
-      <td><a href="doku/"><code>doku/</code></a></td>
-      <td>Ergänzende Projektdokumentationen.</td>
+      <td><a href="docs/"><code>docs/</code></a></td>
+      <td>Exportdateien des Quarto-Quellcodes u. a. die Bachelor-Thesis.</td>
+    </tr>
+    <tr>
+      <td><a href="hardware_doc/"><code>hardware_doc/</code></a></td>
+      <td>Ergänzende Projektdokumentationen, Pinbelegungen und Sensor-Spezifikationen.
+    </tr>
     </tr>
     <tr>
       <td><a href="info/"><code>info/</code></a></td>
