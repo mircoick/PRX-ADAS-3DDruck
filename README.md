@@ -57,7 +57,7 @@ Das Repository gliedert sich in folgende Hauptkomponenten:
 
 ---
 
-## 🛠️ Systemdaten & Key Facts
+## Systemdaten & Key Facts
 
 * **Hersteller:** 3Dgence
 * **Modell:** INDUSTRY F421
