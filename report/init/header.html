@@ -1,28 +1,37 @@
 <div style="
-  position: absolute; 
-  top: 4%;    
-  right: 6%;  
-  width: 15%; 
+  position: absolute;
+  top: 30px;
+  right: 6%;
+  width: 15%;
+  max-width: 300px;
+  min-width: 100px;
+  z-index: 10;
+  pointer-events: none;
 ">
-  <img src="init/Airbus.png" style="width: 100%; height: auto;">
+  <img src="init/Airbus.png"
+       style="width: 100%; height: auto; display: block;">
 </div>
 
 <div style="
-  position: absolute; 
-  top: 15%;    
-  right: 6%;  
-  width: 15%; 
+  position: absolute;
+  top: 120px;
+  right: 6%;
+  width: 15%;
+  max-width: 300px;
+  min-width: 100px;
+  z-index: 10;
+  pointer-events: none;
 ">
-  <img src="init/Logo_groß.png" style="width: 100%; height: auto;">
+  <img src="init/Logo_groß.png"
+       style="width: 100%; height: auto; display: block;">
 </div>
 
 ::: {.content-visible when-format="html"}
 
 <div style="
-  position: absolute; 
-  top: 280px;       /* Platziert die Tabelle sauber unter den Logos */
-  right: 5%;      /* Gleicher rechter Abstand wie die Logos */
-  width: 18%;     /* Tabellenbreite ist 18% der Fensterbreite */
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem 0;
 ">
   <table class="info-tabelle" style="
     width: 100%; 

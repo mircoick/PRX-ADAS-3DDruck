@@ -7,6 +7,108 @@ lang: de
 execute:
   freeze: auto
 
+acronyms:
+  insert_loa: false
+  heading: "Abkürzungsverzeichnis"
+  loa_title: "Abkürzungsverzeichnis {-}"
+  keys:
+    - shortname: CAD
+      longname: Computer-Aided Design
+    - shortname: STL
+      longname: Standard Triangulation Language
+    - shortname: STEP
+      longname: Standard for the Exchange of Product model data
+    - shortname: 3MF
+      longname: 3D Manufacturing Format
+    - shortname: FFF
+      longname: Fused Filament Fabrication
+    - shortname: FDM
+      longname: Fused Deposition Modeling
+    - shortname: SLA
+      longname: Stereolithografie
+    - shortname: DLP
+      longname: Digital Light Processing
+    - shortname: SLS
+      longname: Selective Laser Sintering
+    - shortname: SLM
+      longname: Selective Laser Melting
+    - shortname: ADAS
+      longname: Airbus DS Airborne Solutions GmbH
+    - shortname: NC
+      longname: Normally Closed
+    - shortname: NO
+      longname: Normally Open
+    - shortname: NTC
+      longname: Negative Temperature Coefficient
+    - shortname: PTC
+      longname: Positive Temperature Coefficient
+    - shortname: PWM
+      longname: Pulse Width Modulation
+    - shortname: RRF
+      longname: RepRapFirmware
+    - shortname: USB
+      longname: Universal Serial Bus
+    - shortname: GPIO
+      longname: General Purpose Input/Output
+    - shortname: MCU
+      longname: Microcontroller Unit
+    - shortname: PLA
+      longname: Polylactic Acid
+    - shortname: ABS
+      longname: Acrylonitrile Butadiene Styrene
+    - shortname: PETG
+      longname: Polyethylene Terephthalate Glycol
+    - shortname: PEEK
+      longname: Polyether Ether Ketone
+    - shortname: ULTEM
+      longname: Polyetherimide
+    - shortname: ASA
+      longname: Acrylonitrile Styrene Acrylate
+    - shortname: PC
+      longname: Polycarbonate
+    - shortname: PA12
+      longname: Polyamide 12
+    - shortname: PEKK
+      longname: Polyetherketonketon
+    - shortname: CEE
+      longname: Commission Internationale de Réglementation en Vue de l'Approbation de l'Équipement Électrique
+    - shortname: NEMA
+      longname: National Electrical Manufacturers Association
+    - shortname: LED
+      longname: Light Emitting Diode
+    - shortname: D-SUB
+      longname: D-Subminiature
+    - shortname: IC
+      longname: Integrated Circuit
+    - shortname: SDA
+      longname: Serial Data
+    - shortname: SCL
+      longname: Serial Clock
+    - shortname: I²C
+      longname: Inter-Integrated Circuit
+    - shortname: NFC
+      longname: Near Field Communication
+    - shortname: RGB
+      longname: Red Green Blue
+    - shortname: USV
+      longname: Unterbrechungsfreie Stromversorgung  
+    - shortname: G-Code
+      longname: Geometric Code    
+    - shortname: DIN
+      longname: Deutsches Institut für Normung e. V.
+    - shortname: EN
+      longname: Europäische Norm
+    - shortname: ISO
+      longname: International Organization for Standardization
+    - shortname: ASTM
+      longname: American Society for Testing and Materials
+    - shortname: CSI
+      longname: Camera Serial Interface
+    - shortname: SPI
+      longname: Serial Peripheral Interface
+    - shortname: UART
+      longname: Universal Asynchronous Receiver-Transmitter
+
 format:
   pdf:
     documentclass: scrartcl
@@ -20,13 +122,22 @@ format:
     #toc: true
     #lof: true
     #lot: true
+    csl: https://www.zotero.org/styles/ieee
     linkcolor: black
     keep-tex: false
     toccolor: black
+    link-citations: true
+    citations-hover: true
     template-partials:
       - init/before-body.tex
     include-in-header:
       text: |
+        \AtBeginDocument{
+        \hypersetup{
+          colorlinks=true,
+          citecolor=black
+          }
+        }
         \usepackage{XCharter}
         \usepackage{float}
         \usepackage{listings}
@@ -40,6 +151,10 @@ format:
         \ihead{\includegraphics[scale=0.3]{Logo_klein.pdf}}
         \ohead{\includegraphics[scale=0.01]{Airbus.png}}
         \cfoot{\pagemark}
+    filters:
+      - acronyms
+      - _extensions/rename.lua
+    
   html:
     toc: true
     toc-location: left
@@ -47,10 +162,14 @@ format:
       hypothesis: true
     code-line-numbers: true
     code-tools: true
+    link-citations: true
+    citations-hover: true
     code-block-bg: true
     code-block-border-left: "#31BAE9"
     code-fold: show
     echo: true
+    filters:
+      - acronyms
 
   docx: default
-  gfm: default
+  #gfm: default
