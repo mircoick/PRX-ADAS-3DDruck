@@ -29,7 +29,7 @@ Das Repository gliedert sich in folgende Hauptkomponenten:
   <tbody>
     <tr>
       <td><a href="docs/"><code>docs/</code></a></td>
-      <td>Exportdateien des Quarto-Quellcodes u. a. die Bachelor-Thesis.</td>
+      <td>Exportdateien des Quarto-Quellcodes.</td>
     </tr>
     <tr>
       <td><a href="hardware_doc/"><code>hardware_doc/</code></a></td>
