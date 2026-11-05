@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -88,7 +88,7 @@ div.csl-indent {
 <script src="prx_final_report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="prx_final_report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="prx_final_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="prx_final_report_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="prx_final_report_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="prx_final_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="prx_final_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="prx_final_report_files/libs/bootstrap/bootstrap-ede99668022d729815adb579755f67dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -230,7 +230,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">4. November 2026</p>
+      <p class="date">3. November 2026</p>
     </div>
   </div>
   
@@ -443,6 +443,10 @@ Polycarbonate
 <dd>
 Polyether Ether Ketone
 </dd>
+<dt><span id="acronyms_PEI">PEI</span></dt>
+<dd>
+Polyetherimid
+</dd>
 <dt><span id="acronyms_PEKK">PEKK</span></dt>
 <dd>
 Polyetherketonketon
@@ -506,10 +510,6 @@ Standard Triangulation Language
 <dt><span id="acronyms_UART">UART</span></dt>
 <dd>
 Universal Asynchronous Receiver-Transmitter
-</dd>
-<dt><span id="acronyms_ULTEM">ULTEM</span></dt>
-<dd>
-Polyetherimide
 </dd>
 <dt><span id="acronyms_USB">USB</span></dt>
 <dd>
@@ -617,8 +617,8 @@ Abbildung&nbsp;2: 3DGence Industry F421 <span class="citation" data-cites="3dgen
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><strong>Material Extrusion</strong></td>
-<td style="text-align: left;">FFF / FDM</td>
-<td style="text-align: left;">Thermoplaste (PLA, ABS, PETG, PEEK, ULTEM)</td>
+<td style="text-align: left;">FFF</td>
+<td style="text-align: left;">Thermoplaste (PLA, ABS, PETG, PEEK, PEI)</td>
 <td style="text-align: left;">Ein thermoplastischer Draht (Filament) wird in einem Schmelzkopf verflüssigt und durch eine Düse selektiv aufgetragen.</td>
 </tr>
 <tr class="even">
@@ -638,11 +638,11 @@ Abbildung&nbsp;2: 3DGence Industry F421 <span class="citation" data-cites="3dgen
 </section>
 <section id="material-extrusion" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="material-extrusion"><span class="header-section-number">3.3</span> Material Extrusion</h2>
-<p>Weil der zu analysierende Drucker auf dem FFF bzw. FDM Verfahren basiert, wurde sich mit diesen Verfahren näher beschäftigt. Hier spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:</p>
+<p>Weil der zu analysierende Drucker auf dem FFF Verfahren basiert, wurde sich mit diesen Verfahren näher beschäftigt. Hier spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:</p>
 <ul>
 <li>Standard-Kunststoffe: Unkompliziert zu verarbeiten (z. B. PLA, PETG). Geringe Temperaturbeständigkeit, vorrangig für funktionale Prototypen und einfache Gehäuse.</li>
 <li>Technische Kunststoffe: Erhöhte Festigkeit und Temperaturbeständigkeit (z. B. ABS, ASA, Polyamid/Nylon, PC). Benötigen meist geschlossene, beheizte Bauräume zur Vermeidung von Verzug (<em>Warping</em>).</li>
-<li>Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder ULTEM bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu <span class="math inline">\(500\,°C\)</span> sowie aktiv beheizten Bauräumen (<span class="math inline">\(&gt; 100\,°C\)</span>).</li>
+<li>Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder PEI bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu <span class="math inline">\(500\,°C\)</span> sowie aktiv beheizten Bauräumen (<span class="math inline">\(&gt; 100\,°C\)</span>).</li>
 </ul>
 </section>
 </section>
@@ -704,13 +704,13 @@ Abbildung&nbsp;3: Step-Motor Aufbau <span class="citation" data-cites="step_moto
 </section>
 <section id="sec-pwm" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="sec-pwm"><span class="header-section-number">4.1.3</span> Heizkomponenten</h3>
-<p>Die Heizelemente sind wohl die am einfachsten anzusteuerden Bauteile in dieser Liste, da sie bei einer anliegenden Spannung Wärme erzeugen. Die hier in einem Material eingebaute Spule, z.B. in das Hotend oder Heatbed des Druckers, erwärmt sich bei Stromdurchfluss. Neben den Heizelementen bedarf es jedoch noch mindestens eines Temperatursensors, welcher die Temperatur überwacht und als Heizstopp fungiert. Diese Temperatursensoren können als NTC (Heißleiter) oder PTC (Kaltleiter) umgesetzt werden. Am beliebtesten sind hier jedoch die wie ein PTC funktionierenden Platin-Sensoren, da diese PT100 bzw. PT1000 Glieder einen sehr linearen Kurvenverlauf aufweisen. Außerdem sind sie so optimiert, dass sie bei einer Temperatur von <span class="math inline">\(T=0\,°C\)</span> exakt einen Widerstand von <span class="math inline">\(R_{PT100}=100\,\Omega\)</span> bzw. <span class="math inline">\(R_{PT1000}=1000\,\Omega\)</span> aufweisen. Sie sind somit ausgezeichnet für die Temperaturmessung geeignet. Die <a href="#fig-pt100_pt1000" class="quarto-xref">Abbildung&nbsp;4</a> zeigt einen Kurvenverlauf der beiden Temperatursensoren.</p>
+<p>Die Heizelemente sind wohl die am direktesten anzusteuerden Bauteile in dieser Liste, da sie bei einer anliegenden Spannung Wärme erzeugen. Die hier in einem Material eingebaute Spule, z.B. in das Hotend oder Heatbed des Druckers, erwärmt sich bei Stromdurchfluss. Neben den Heizelementen bedarf es jedoch noch mindestens eines Temperatursensors, welcher die Temperatur überwacht und als Heizstopp fungiert. Diese Temperatursensoren können als NTC (Heißleiter) oder PTC (Kaltleiter) umgesetzt werden. Am beliebtesten sind hier jedoch die wie ein PTC funktionierenden Platin-Sensoren, da diese PT100 bzw. PT1000 Glieder einen sehr linearen Kurvenverlauf aufweisen. Außerdem sind sie so optimiert, dass sie bei einer Temperatur von <span class="math inline">\(T=0\,°C\)</span> exakt einen Widerstand von <span class="math inline">\(R_{PT100}=100\,\Omega\)</span> bzw. <span class="math inline">\(R_{PT1000}=1000\,\Omega\)</span> aufweisen. Sie sind somit ausgezeichnet für die Temperaturmessung geeignet. Die <a href="#fig-pt100_pt1000" class="quarto-xref">Abbildung&nbsp;4</a> zeigt einen Kurvenverlauf der beiden Temperatursensoren.</p>
 <div id="cell-fig-pt100_pt1000" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div id="fig-pt100_pt1000" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pt100_pt1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="prx_final_report_files/figure-html/fig-pt100_pt1000-output-1.png" width="472" height="327" class="figure-img">
+<img src="prx_final_report_files/figure-html/fig-pt100_pt1000-output-1.png" width="469" height="325" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pt100_pt1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;4: Kennlinie der Pt100 und Pt1000 Sensoren
@@ -719,13 +719,13 @@ Abbildung&nbsp;4: Kennlinie der Pt100 und Pt1000 Sensoren
 </div>
 </div>
 </div>
-<p>Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bauteil wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschreiten. Standardisierte Lüfter beim 3D-Druck können mit bis zu 24V über ein PWM-Signal betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Als Beispiel kann man einen <span class="math inline">\(5\,\text{V}\)</span> Lüfter in Verbindung mit einer maximalen Signalspannung von <span class="math inline">\(V_{sig}=5\,\text{V}\)</span> nehmen. Dieses kontinuierliche <span class="math inline">\(5\,\text{V}\)</span> Spannungssignal entspricht für den Lüfter eine Leistung am Ausgang von <span class="math inline">\(P_{max}=100\,\%\)</span>. Wird nun mithilfe der Pulsweitenmodulation das Signal auf <span class="math inline">\(20\,\%\)</span> reduziert, das heißt es wird kein Dauerimpuls gesendet, sondern ein Impuls mit einer Pulsbreite von <span class="math inline">\(t_{an}=20\,\%\)</span> gesendet, so wird die Spannung auf <span class="math inline">\(V_{sig}=1\,\text{V}\)</span> reduziert und der Lüfter läuft nur noch mit <span class="math inline">\(P=20\,\%\)</span>. Somit kann die Leistung des Lüfters über das PWM-Signal geregelt werden. Die <a href="#fig-pwm" class="quarto-xref">Abbildung&nbsp;5</a> zeigt die entstehende Signalspannung bei beispielhaften PWM-Signalen.</p>
+<p>Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bauteil wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschreiten. Standardisierte Lüfter beim 3D-Druck können mit bis zu <span class="math inline">\(24\,\text{V}\)</span> über ein PWM-Signal betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Als Beispiel kann man einen <span class="math inline">\(5\,\text{V}\)</span> Lüfter in Verbindung mit einer maximalen Signalspannung von <span class="math inline">\(V_{sig}=5\,\text{V}\)</span> nehmen. Dieses kontinuierliche <span class="math inline">\(5\,\text{V}\)</span> Spannungssignal entspricht für den Lüfter eine Leistung am Ausgang von <span class="math inline">\(P_{max}=100\,\%\)</span>. Wird nun mithilfe der Pulsweitenmodulation das Signal auf <span class="math inline">\(20\,\%\)</span> reduziert, das heißt es wird kein Dauerimpuls gesendet, sondern ein Impuls mit einer Pulsbreite von <span class="math inline">\(t_{an}=20\,\%\)</span> gesendet, so wird die Spannung auf <span class="math inline">\(V_{sig}=1\,\text{V}\)</span> reduziert und der Lüfter läuft nur noch mit <span class="math inline">\(P=20\,\%\)</span>. Somit kann die Leistung des Lüfters über das PWM-Signal geregelt werden. Die <a href="#fig-pwm" class="quarto-xref">Abbildung&nbsp;5</a> zeigt die entstehende Signalspannung bei beispielhaften PWM-Signalen.</p>
 <div id="cell-fig-pwm" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-pwm" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pwm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="prx_final_report_files/figure-html/fig-pwm-output-1.png" width="664" height="278" class="figure-img">
+<img src="prx_final_report_files/figure-html/fig-pwm-output-1.png" width="662" height="278" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pwm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;5: Signalverlauf bei Pulsweitenmodulation
@@ -989,7 +989,7 @@ Abbildung&nbsp;13: Endschalter TCST2103 <span class="citation" data-cites="TCST2
 </figcaption>
 </figure>
 </div>
-<p>Zur Ansteuerung des TCST2103 werden lediglich drei Anschlüsse benötigt: Versorgungsspannung (<span class="math inline">\(V_{\text{CC}}\)</span>), Masse (<span class="math inline">\(\text{GND}\)</span>) und eine Signalleitung (<span class="math inline">\(V_\text{OUT}\)</span>). Die integrierte Infrarot-LED wird über einen Vorwiderstand (<span class="math inline">\(R_{\text{LED}} = 220\ \Omega-330\ \Omega\)</span>) an <span class="math inline">\(V_{\text{CC}}=5\,\text{V}\)</span> betrieben, während der Kollektor des Fototransistors über einen Pull-up-Widerstand mit der Signalleitung verbunden ist. Solange der Lichtstrahl ungestört auf den Fototransistor trifft, schaltet dieser durch und zieht das Signal auf <span class="math inline">\(\text{GND}\)</span> (Low). Wird der Lichtstrahl durch die Unterbrecherfahne blockiert, sperrt der Transistor, sodass die Signalleitung über den Pull-up-Widerstand auf <span class="math inline">\(V_{\text{CC}}\)</span> (High) gezogen wird. Dieses High-Signal zeigt der Steuerung das Erreichen der Endposition an.</p>
+<p>Zur Ansteuerung des TCST2103 werden lediglich drei Anschlüsse benötigt: Versorgungsspannung (<span class="math inline">\(V_{\text{CC}}\)</span>), Masse (<span class="math inline">\(\text{GND}\)</span>) und eine Signalleitung (<span class="math inline">\(V_\text{OUT}\)</span>). Die integrierte Infrarot-LED wird über einen Vorwiderstand (<span class="math inline">\(R_{\text{LED}} = 220\,\Omega-330\,\Omega\)</span>) an <span class="math inline">\(V_{\text{CC}}=5\,\text{V}\)</span> betrieben, während der Kollektor des Fototransistors über einen Pull-up-Widerstand mit der Signalleitung verbunden ist. Solange der Lichtstrahl ungestört auf den Fototransistor trifft, schaltet dieser durch und zieht das Signal auf <span class="math inline">\(\text{GND}\)</span> (Low). Wird der Lichtstrahl durch die Unterbrecherfahne blockiert, sperrt der Transistor, sodass die Signalleitung über den Pull-up-Widerstand auf <span class="math inline">\(V_{\text{CC}}\)</span> (High) gezogen wird. Dieses High-Signal zeigt der Steuerung das Erreichen der Endposition an.</p>
 </section>
 <section id="druckkopf-steuerung" class="level3" data-number="5.1.3">
 <h3 data-number="5.1.3" class="anchored" data-anchor-id="druckkopf-steuerung"><span class="header-section-number">5.1.3</span> Druckkopf Steuerung</h3>
@@ -1066,7 +1066,7 @@ Abbildung&nbsp;15: Platine des Druckkopf vom F421
 </figure>
 </div>
 <p>Nach dem Durchmessen sind bereits mehrere Komponenten identifiziert und mit den passenden PINs des D-SUBs in Verbindung gebracht worden. So konnten die beiden Heizpatronen mit den Lüftern und den zwei PT1000 Glieder sowie der Servo angesteuert werden. Die Heizpatronen, die Lüfter sowie die PT1000 Glieder sind hierbei identisch zu herkömmlichen Modellen und lassen sich gleich zum Referenzsystem ansteuern. Der verbaute Servo ist ein <em>HS-7955TG</em> der Firma HiTec und funktioniert über ein klassisches PWM-Signal mit einer Frequenz von <span class="math inline">\(50\,\text{Hz}\)</span>, bei dem die jeweilige Impulsbreite im Bereich von <span class="math inline">\(1\,\text{ms}\)</span> bis <span class="math inline">\(2\,\text{ms}\)</span> die exakte Position definiert. Im Druckkopf des Industry F421 übernimmt dieser Servo das mechanische Umschalten zwischen den Extrudern, weshalb für eine zuverlässige Funktion neben der Spannungsversorgung ein präzises, störungsarmes Steuersignal erforderlich ist.</p>
-<p>Somit blieben einzig und allein die Wägezellen. Diese Loadcells geben über Torsionsmodule eine zur Eingangsspannung und Krafteinwirkung proportionale Ausgangsspannung aus. Nach Verstärkung lässt sich über dieses Spannungssignal die anliegende Kraft bzw. Masse präzise bestimmen, was für automatische Kalibrierprozesse genutzt werden kann. Nach weiterer Analyse der Platine wurde deutlich, dass auch diese Wägezellen über einen I²C-Bus mit dem Mainboard kommunizieren. Die auf der Platinenrückseite verbauten Schaltungen bzw. ICs (<a href="#fig-hotend_platine_rück" class="quarto-xref">Abbildung&nbsp;15 (b)</a>) zeigten einen bis zum vorletzten Bauteil parallelen Aufbau. Als erstes Bauteil war hierbei ein Verstärker-IC mit anschließender I²C-Konvertierung verbaut (<em>Texas Instruments: INA333</em> und <em>Adafruit: MCP96L01</em>). Diese SDA- und SCL-Leitungen wurden anschließend auf einen gemeinsamen Speicher (<em>ATMEL732</em>) geführt, um im letzten Schritt an die Ausgangspins übergeben zu werden.</p>
+<p>Somit blieben einzig und allein die Wägezellen. Diese Loadcells geben über Torsionsmodule eine zur Eingangsspannung und Krafteinwirkung proportionale Ausgangsspannung aus. Nach Verstärkung lässt sich über dieses Spannungssignal die anliegende Kraft und die dadurch berechnette Masse präzise bestimmen, was für automatische Kalibrierprozesse genutzt werden kann. Nach weiterer Analyse der Platine wurde deutlich, dass auch diese Wägezellen über einen I²C-Bus mit dem Mainboard kommunizieren. Die auf der Platinenrückseite verbauten Schaltungen bzw. ICs (<a href="#fig-hotend_platine_rück" class="quarto-xref">Abbildung&nbsp;15 (b)</a>) zeigten einen bis zum vorletzten Bauteil parallelen Aufbau. Als erstes Bauteil war hierbei ein Verstärker-IC mit anschließender I²C-Konvertierung verbaut (<em>Texas Instruments: INA333</em> und <em>Adafruit: MCP96L01</em>). Diese SDA- und SCL-Leitungen wurden anschließend auf einen gemeinsamen Speicher (<em>ATMEL732</em>) geführt, um im letzten Schritt an die Ausgangspins übergeben zu werden.</p>
 </section>
 <section id="heizbett" class="level3" data-number="5.1.4">
 <h3 data-number="5.1.4" class="anchored" data-anchor-id="heizbett"><span class="header-section-number">5.1.4</span> Heizbett</h3>
@@ -1189,12 +1189,12 @@ Abbildung&nbsp;19: Flowsensor des F421
 </section>
 <section id="vakuumpumpe-für-den-bauraum" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="vakuumpumpe-für-den-bauraum"><span class="header-section-number">5.2.3</span> Vakuumpumpe für den Bauraum</h3>
-<p>Bei der Verarbeitung sehr hochwertiger und hochtemperaturbeständiger Kunststoffe (wie beispielsweise PEEK oder PEKK) entstehen chemische sowie potenziell gesundheitsschädliche Dämpfe und Entgasungen. Um diese kontrolliert abzusaugen und ein Abscheiden im Druckraum zu verhindern, ist im F421 unterhalb des Heizbetts eine spezielle Vakuumpumpe verbaut, die für einen gezielten Unterdruck und die geordnete Abführung der Prozessabgase sorgt. Als Kernkomponenten fungieren hierbei ein bürstenloser Radialgebläsemotor vom Typ <em>Wonsmart WS9290B-48-240-X200</em> zur Erzeugung des Luftstroms sowie eine Vakuum- und Ventileinheit vom Typ <em>SMC ZK2-ZSVB-A</em> zur Regelung und Überwachung des Unterdrucks. Der Motor wird hierbei ebenfalls über die <span class="math inline">\(230\,\text{V}\)</span> Relais-Platine und die Ventileinheit über die <span class="math inline">\(24\,\text{V}\)</span>-Versorgung des Hardwareboards angesteuert. Das Steuersignal der Ventileinheit erlaubt es der Steuerung, das Vakuum je nach Prozessphase gezielt zuzuschalten oder abzulassen. Das integrierte Druckmessglied der SMC-Einheit gibt wiederum Rückmeldung an das System, um das Erreichen des erforderlichen Unterdrucks kontinuierlich zu überwachen und bei einem Vakuumabfall eine Schutzabschaltung auszulösen.</p>
+<p>Neben ABS entstehen bei der Verarbeitung sehr hochwertiger und hochtemperaturbeständiger Kunststoffe (wie beispielsweise PEEK oder PEKK) chemische sowie potenziell gesundheitsschädliche Dämpfe und Entgasungen. Um diese kontrolliert abzusaugen und ein Abscheiden im Druckraum zu verhindern, ist im F421 unterhalb des Heizbetts eine spezielle Vakuumpumpe verbaut, die für einen gezielten Unterdruck und die geordnete Abführung der Prozessabgase sorgt. Als Kernkomponenten fungieren hierbei ein bürstenloser Radialgebläsemotor vom Typ <em>Wonsmart WS9290B-48-240-X200</em> zur Erzeugung des Luftstroms sowie eine Vakuum- und Ventileinheit vom Typ <em>SMC ZK2-ZSVB-A</em> zur Regelung und Überwachung des Unterdrucks. Der Motor wird hierbei ebenfalls über die <span class="math inline">\(230\,\text{V}\)</span> Relais-Platine und die Ventileinheit über die <span class="math inline">\(24\,\text{V}\)</span>-Versorgung des Hardwareboards angesteuert. Das Steuersignal der Ventileinheit erlaubt es der Steuerung, das Vakuum je nach Prozessphase gezielt zuzuschalten oder abzulassen. Das integrierte Druckmessglied der SMC-Einheit gibt wiederum Rückmeldung an das System, um das Erreichen des erforderlichen Unterdrucks kontinuierlich zu überwachen und bei einem Vakuumabfall eine Schutzabschaltung auszulösen.</p>
 </section>
 <section id="nfc-sensoren-und-led-steuerung-für-filamenterkennung" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="nfc-sensoren-und-led-steuerung-für-filamenterkennung"><span class="header-section-number">5.2.4</span> NFC-Sensoren und LED-Steuerung für Filamenterkennung</h3>
 <p>Neben den bereits angesprochenen PWM-Motoren im Filamenteinschub befinden sich an jedem der vier Filamentplätze ein NFC-Lesegerät sowie eine zugehörige LED-Statusanzeige. Beide Komponenten sind auf gemeinsamen Platinen verbaut und werden ebenfalls direkt über den I²C-Bus angesteuert und konfiguriert.</p>
-<p>Um Materialverwechslungen auszuschließen und spulenbezogene Parameter automatisiert zu laden, lesen die NFC-Lesegeräte die auf den Herstellerspulen integrierten NFC-Chips (z. B. Materialtyp und Farbe) aus und übermitteln die Daten an die Steuerung. Die gekoppelte RGB-LED-Statusanzeige an den jeweiligen Einschüben signalisiert visuell den Zustand des jeweiligen Filamentschachts. Diese mit PWM-Motoren, NFC und einer LED-Steuerung ausgestatteten, komplett erläuterten, Platinen sind der <a href="#fig-filament_hinten" class="quarto-xref">Abbildung&nbsp;12 (b)</a> zu entnehmen.</p>
+<p>Um Materialverwechslungen auszuschließen und spulenbezogene Parameter automatisiert zu laden, lesen die NFC-Lesegeräte die auf den Herstellerspulen integrierten NFC-Chips (z.B. Materialtyp und Farbe) aus und übermitteln die Daten an die Steuerung. Die gekoppelte RGB-LED-Statusanzeige an den jeweiligen Einschüben signalisiert visuell den Zustand des jeweiligen Filamentschachts. Diese mit PWM-Motoren, NFC und einer LED-Steuerung ausgestatteten, komplett erläuterten, Platinen sind der <a href="#fig-filament_hinten" class="quarto-xref">Abbildung&nbsp;12 (b)</a> zu entnehmen.</p>
 </section>
 <section id="batterie-steuerung-bei-stromausfall" class="level3" data-number="5.2.5">
 <h3 data-number="5.2.5" class="anchored" data-anchor-id="batterie-steuerung-bei-stromausfall"><span class="header-section-number">5.2.5</span> Batterie-Steuerung bei Stromausfall</h3>
@@ -1451,12 +1451,12 @@ Peper &amp; Söhne. 2026. <span>„QUARTIER LLOYD INDUSTRIEPARK - BREMEN“</spa
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Zitat</h2><div><div class="quarto-appendix-secondary-label">Mit BibTeX zitieren:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ick2026,
   author = {Ick, Mirco},
   title = {Abschlussbericht Praxissemester},
-  date = {2026-11-04},
+  date = {2026-11-03},
   langid = {de}
 }
 </code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Bitte zitieren Sie diese Arbeit als:</div><div id="ref-ick2026" class="csl-entry quarto-appendix-citeas" role="listitem">
 Ick, Mirco. 2026. <span>“Abschlussbericht Praxissemester.”</span>
-Abschlussbericht, November 4.
+Abschlussbericht, November 3.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">

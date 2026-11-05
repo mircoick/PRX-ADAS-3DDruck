@@ -19,7 +19,7 @@ Die DIN EN ISO/ASTM 52900 gliedert die additiven Fertigungsverfahren nach ihren 
 
 | Verfahrensgruppe | Kürzel | Verarbeiteter Werkstoff | Funktionsprinzip |
 | :--- | :--- | :--- | :--- |
-| **Material Extrusion** | FFF / FDM | Thermoplaste (PLA, ABS, PETG, PEEK, ULTEM) | Ein thermoplastischer Draht (Filament) wird in einem Schmelzkopf verflüssigt und durch eine Düse selektiv aufgetragen. |
+| **Material Extrusion** | FFF | Thermoplaste (PLA, ABS, PETG, PEEK, PEI) | Ein thermoplastischer Draht (Filament) wird in einem Schmelzkopf verflüssigt und durch eine Düse selektiv aufgetragen. |
 | **Vat Photopolymerization** | SLA / DLP | Photopolymer-Harze (Resin) | Flüssiges Kunstharz wird mittels Laserstrahl oder Projektor schichtweise durch UV-Licht punktuell ausgehärtet. |
 | **Powder Bed Fusion** | SLS / SLM | Kunststoffe (PA12) oder Metallpulver (Edelstahl, Titan) | Ein feines Pulver wird in einem Pulverbett verteilt und per Laser lokal aufgeschmolzen bzw. versintert. |
 
@@ -27,8 +27,8 @@ Die DIN EN ISO/ASTM 52900 gliedert die additiven Fertigungsverfahren nach ihren 
 
 ## Material Extrusion
 
-Weil der zu analysierende Drucker auf dem FFF bzw. FDM Verfahren basiert, wurde sich mit diesen Verfahren näher beschäftigt. Hier spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:
+Weil der zu analysierende Drucker auf dem FFF Verfahren basiert, wurde sich mit diesen Verfahren näher beschäftigt. Hier spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:
 
 - Standard-Kunststoffe: Unkompliziert zu verarbeiten (z. B. PLA, PETG). Geringe Temperaturbeständigkeit, vorrangig für funktionale Prototypen und einfache Gehäuse.
 - Technische Kunststoffe: Erhöhte Festigkeit und Temperaturbeständigkeit (z. B. ABS, ASA, Polyamid/Nylon, PC). Benötigen meist geschlossene, beheizte Bauräume zur Vermeidung von Verzug (*Warping*).
-- Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder ULTEM bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu $500\,°C$ sowie aktiv beheizten Bauräumen ($> 100\,°C$).
+- Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder PEI bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu $500\,°C$ sowie aktiv beheizten Bauräumen ($> 100\,°C$).

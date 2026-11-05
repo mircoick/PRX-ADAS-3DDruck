@@ -60,8 +60,8 @@ acronyms:
       longname: Polyethylene Terephthalate Glycol
     - shortname: PEEK
       longname: Polyether Ether Ketone
-    - shortname: ULTEM
-      longname: Polyetherimide
+    - shortname: PEI
+      longname: Polyetherimid
     - shortname: ASA
       longname: Acrylonitrile Styrene Acrylate
     - shortname: PC

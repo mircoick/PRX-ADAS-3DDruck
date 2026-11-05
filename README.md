@@ -11,7 +11,7 @@ Die offiziellen Berichte und Ausarbeitungen stehen hier zur Verfügung:
   [&#128196; PDF](docs/Zwischen_Mirco_Ick_5312533.pdf)
 
 - **Abschlussbericht:** 
-  [&#128196; PDF](docs/prx_final_report.pdf) &nbsp;|&nbsp; [&#127760; Webseite](https://mircoick.github.io/PRX-ADAS-3DDruck/prx_final_report.html)
+  [&#128196; PDF](docs/Abschlussbericht_Mirco_Ick_5312533.pdf) &nbsp;|&nbsp; [&#127760; Webseite](https://mircoick.github.io/PRX-ADAS-3DDruck/Abschlussbericht_Mirco_Ick_5312533.html)
 
 ---
 
