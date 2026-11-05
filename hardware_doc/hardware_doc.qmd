@@ -11,40 +11,6 @@ bibliography: references.bib
 number-sections: true
 ---
 \newpage
-
-::: {.callout-important}
-## **WICHTIG / TODO**
-
-- **\textcolor{red}{KiCad}**
-  - 4.7kOhm Widerstand zwischen TX/RX am RP2040
-  - Molex 2x10 in 3mm nicht 4.2mm
-  - Rechter Extruder Pin nach links (Loch ist ca beim zweiten loch von links des Extruder Pins)
-  - Pins weiter auseinander zum besseren stecken
-
-- Lüfterhalter Raspberry Pi anpassen 
-- Lüfterhalter Kraken anpassen
-- Displayhalter drucken lassen
-- 2x10 an 28SUB Durchmessen
-
-:::
-
-::: {.callout-important}
-## Wenn oben fertig dann TODO hier
-- **Platine löten für Adapter**
-- Batteriesteuerung einbinden
-- Vakuumpumpe richtig einbinden
-- Filamentraum NFC einbinden
-
-
-- KiCad:
-  - X40 Einbringen
-  - D-SUB9 Stecker Einbringen
-  - X52 Einbringen
-  
-:::
-
-
-\newpage
 # Doku F421
 ## Identifizierte nicht von 3DGence entworfene Bauteile
 
